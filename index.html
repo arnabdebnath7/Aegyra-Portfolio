@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegyra: The Sovereign Sanctum of People, Giants &amp; Engineered Relics | Arnab Debnath</title>
+  <meta
+    name="description"
+    content="Enter Aegyra, a 2D and 2.5D WebGL interactive sanctum and full stack engineering portfolio by Arnab Debnath featuring Three.js shaders, GSAP scroll choreography, and verified GitHub relics."
+  />
+  <meta property="og:title" content="Aegyra: The Sovereign Sanctum | Arnab Debnath" />
+  <meta
+    property="og:description"
+    content="A 2D and 2.5D mixed WebGL civilization showcase and engineering portfolio crafted with Three.js, custom GLSL shaders, and GSAP ScrollTrigger."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/300543148?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Branded Classical Temple SVG Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23131209'/%3E%3Cpath d='M12 24L32 10L52 24H12Z' fill='%23D4A65A'/%3E%3Crect x='16' y='27' width='6' height='21' fill='%23F5F2EB'/%3E%3Crect x='29' y='27' width='6' height='21' fill='%23F5F2EB'/%3E%3Crect x='42' y='27' width='6' height='21' fill='%23F5F2EB'/%3E%3Crect x='10' y='50' width='44' height='4' fill='%23D4A65A'/%3E%3C/svg%3E"
+  />
+
+  <!-- Single Approved Typeface: Geist & Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- AEO FAQPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the 2.5D WebGL and GSAP scroll architecture operate on mobile Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The stage pairs a single Three.js WebGLRenderer with custom GLSL depth displacement shaders and GSAP ScrollTrigger scrub timelines, maintaining 60 frames per second on Android and desktop browsers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the invisible watermark embedded inside the artwork plates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every canvas plate encodes Arnab Debnath's cryptographic authorship string into the Least Significant Bits of the RGB pixel buffer, keeping the surface completely free of visible marks while remaining verifiable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the featured repositories real deployed projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every relic links directly to Arnab Debnath's live GitHub repositories and Vercel production deployments including DoraBot, Trading Journal, Quill, Website Hunter AI, and Mrittika Pavilion."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to Content for Keyboard Accessibility -->
+  <a href="#main-sanctum" class="skip-link button-sm">Skip to sanctum content</a>
+
+  <!-- FIXED 2.5D THREE.JS WEBGL SHADER CANVAS -->
+  <canvas id="webgl-sanctum-canvas" aria-hidden="true"></canvas>
+
+  <!-- CELESTIAL BOLIDE (METEOR) IMPACT AWAKENING GATE -->
+  <aside
+    id="starfall-intro-gate"
+    class="starfall-intro-gate"
+    aria-label="Celestial bolide awakening sequence"
+  >
+    <div style="display: flex; align-items: center; gap: var(--spacing-100);">
+      <span class="caption-3 mono" style="color: var(--text-info);">
+        ASTRAL OBSERVATORY // CALDERA ENTRY
+      </span>
+    </div>
+
+    <div class="starfall-center-card">
+      <!-- Classical Temple & Laurel Emblem SVG (Single-weight vector) -->
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M10 20L24 10L38 20H10Z" stroke="var(--core-primary-400)" stroke-width="2" />
+        <path d="M14 20V34M21 20V34M27 20V34M34 20V34" stroke="var(--text-primary)" stroke-width="2" />
+        <path d="M8 34H40M6 38H42" stroke="var(--core-primary-400)" stroke-width="2" />
+      </svg>
+      <p class="caption-3 mono" style="color: var(--text-info);" id="bolide-altitude-readout">
+        428 leagues above caldera
+      </p>
+      <h2 class="heading-4">The Starfall of Aegyra</h2>
+      <p class="body-5" style="color: var(--text-secondary);">
+        Behold the celestial bolide descending upon the sunken valley to awaken the marble viaducts,
+        living giants, and engineered relics within.
+      </p>
+      <button type="button" id="ignite-starfall-btn" class="btn btn-primary button-md">
+        Ignite the starfall
+      </button>
+    </div>
+
+    <div class="starfall-pillars-bar">
+      <div class="starfall-pillar-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M3 19L9 10L14 16L18 11L21 19H3Z" />
+        </svg>
+        <span class="caption-3 mono">LANDSCAPES</span>
+      </div>
+      <div class="starfall-pillar-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M3 10L12 4L21 10H3Z" />
+          <path d="M6 10V18M10 10V18M14 10V18M18 10V18M3 18H21" />
+        </svg>
+        <span class="caption-3 mono">CIVILIZATION</span>
+      </div>
+      <div class="starfall-pillar-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M4 18C7 18 9 15 11 11C13 7 16 5 19 5C20 5 20 7 18 8C16 9 15 12 15 18M7 18V21M13 18V21" />
+        </svg>
+        <span class="caption-3 mono">CREATURES</span>
+      </div>
+      <div class="starfall-pillar-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M4 6C4 5 6 4 12 4C18 4 20 5 20 6V18C20 19 18 20 12 20C6 20 4 19 4 18V6Z" />
+          <path d="M12 4V20" />
+        </svg>
+        <span class="caption-3 mono">CODEX RELICS</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FLOATING NAVIGATION BAR (B7) -->
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary sanctum navigation">
+      <a href="#hero" class="brand-lockup">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M4 13L16 5L28 13H4Z" stroke="var(--core-primary-400)" stroke-width="2" />
+          <path d="M8 13V24M13 13V24M19 13V24M24 13V24M4 24H28" stroke="currentColor" stroke-width="2" />
+        </svg>
+        <span class="title-2">Aegyra</span>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="#hero" class="nav-link title-4" aria-current="page">Sanctum</a></li>
+        <li><a href="#civilization" class="nav-link title-4">Civilization</a></li>
+        <li><a href="#biomes" class="nav-link title-4">Realms</a></li>
+        <li><a href="#relics" class="nav-link title-4">Engineered Relics</a></li>
+        <li><a href="#faq" class="nav-link title-4">Chronicles</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="verify-stego-btn" class="btn btn-tertiary button-sm">
+          Verify seal
+        </button>
+        <button type="button" id="open-foundations-btn" class="btn btn-secondary button-sm">
+          Tokens
+        </button>
+        <button type="button" id="theme-toggle-btn" class="btn btn-secondary button-sm">
+          Light mode
+        </button>
+        <a href="#commission" class="btn btn-primary button-sm nav-cta-desktop">
+          Commence the sojourn
+        </a>
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="menu-toggle-btn"
+          aria-expanded="false"
+          aria-controls="mobile-menu-panel"
+          aria-label="Toggle navigation menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="8" x2="20" y2="8" class="menu-line line-top" />
+            <line x1="4" y1="16" x2="20" y2="16" class="menu-line line-bottom" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- FULL HEIGHT MOBILE NAVIGATION PANEL (60ms Staggered Entrance) -->
+  <div id="mobile-menu-panel" class="mobile-menu-panel" data-open="false">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item" style="transition-delay: 60ms;">
+        <a href="#hero" class="heading-4" style="color: var(--text-primary); text-decoration: none;">
+          01 / The Sovereign Sanctum
+        </a>
+      </li>
+      <li class="mobile-nav-item" style="transition-delay: 120ms;">
+        <a href="#civilization" class="heading-4" style="color: var(--text-primary); text-decoration: none;">
+          02 / People &amp; Giants
+        </a>
+      </li>
+      <li class="mobile-nav-item" style="transition-delay: 180ms;">
+        <a href="#biomes" class="heading-4" style="color: var(--text-primary); text-decoration: none;">
+          03 / The Four Realms
+        </a>
+      </li>
+      <li class="mobile-nav-item" style="transition-delay: 240ms;">
+        <a href="#relics" class="heading-4" style="color: var(--text-primary); text-decoration: none;">
+          04 / GitHub Codex Relics
+        </a>
+      </li>
+      <li class="mobile-nav-item" style="transition-delay: 300ms;">
+        <a href="#faq" class="heading-4" style="color: var(--text-primary); text-decoration: none;">
+          05 / Archival Inquiries
+        </a>
+      </li>
+      <li class="mobile-nav-item" style="transition-delay: 360ms;">
+        <a href="#commission" class="btn btn-primary button-md" style="width: 100%;">
+          Commence the sojourn
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-sanctum">
+    <!-- ====================================================================
+         SECTION 1: ABOVE THE FOLD HERO (1 DOMINANT ANCHOR, 1 PRIMARY CTA)
+         Heading & subheading capped at 680px, no period in Heading 1
+         ==================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container-agency">
+        <div class="hero-layout">
+          <div class="hero-copy-column">
+            <span class="caption-3 mono" style="color: var(--text-info);">
+              AEGYRA SANCTUM // ARNAB DEBNATH PORTFOLIO
+            </span>
+
+            <h1 class="heading-1 hero-heading-gradient hero-heading-limit">
+              Where sovereign architecture<br />meets living giants
+            </h1>
+
+            <p class="body-2 hero-heading-limit" style="color: var(--text-secondary);">
+              Step across the Corinthian viaduct into a 2D and 2.5D WebGL civilization where
+              prehistoric companions, classical temples, and nine real full stack software relics
+              coexist in a single interactive world.
+            </p>
+
+            <!-- Single Primary CTA Above the Fold (8px vertical, 12px horizontal padding) -->
+            <div style="display: flex; align-items: center; gap: var(--spacing-200);">
+              <a href="#relics" class="btn btn-primary button-md">
+                Commence the sojourn
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12H19M13 6L19 12L13 18" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Proof Signal Directly Beside Hero Claim -->
+            <div class="proof-strip">
+              <div>
+                <p class="title-3 mono">9 GitHub Codices</p>
+                <p class="caption-2" style="color: var(--text-tertiary);">
+                  Verified repositories by @arnabdebnath7
+                </p>
+              </div>
+              <div>
+                <p class="title-3 mono">5 Live Citadels</p>
+                <p class="caption-2" style="color: var(--text-tertiary);">
+                  Production deployments on Vercel edge
+                </p>
+              </div>
+              <div>
+                <p class="title-3 mono">LSB Stego Sealed</p>
+                <p class="caption-2" style="color: var(--text-tertiary);">
+                  Invisible pixel watermark protection
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Architectural Double-Bezel Hero Matte Plate -->
+          <div class="hero-Visual-column">
+            <div class="bezel-outer">
+              <div class="bezel-inner aspect-4-5">
+                <canvas
+                  id="hero-matte-canvas"
+                  data-matte-scene="citadel"
+                  width="640"
+                  height="800"
+                  style="width: 100%; height: 100%; display: block;"
+                  aria-label="Classical oil matte painting of the Aegyra Waterfall Citadel and Roman viaduct with sauropod companions"
+                ></canvas>
+              </div>
+              <div style="padding: var(--spacing-100); display: flex; justify-content: space-between; align-items: center;">
+                <span class="caption-3 mono" style="color: var(--text-info);">
+                  PLATE I // WATERFALL CITADEL
+                </span>
+                <span class="caption-4 mono" style="color: var(--text-tertiary);">
+                  LSB SEAL ACTIVE
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: MANDATORY B11 TAGLINE REVEAL SECTION (WORD BY WORD SCROLL)
+         ==================================================================== -->
+    <section class="section-block" aria-label="Sanctum manifesto">
+      <div class="container-agency">
+        <div class="tagline-reveal-box">
+          <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-200);">
+            INSCRIPTION OF THE ARCHIVES // VOL. I
+          </p>
+          <h2 id="b11-tagline-text" class="heading-2 tagline-copy-wrap">
+            Every enduring civilization is measured not by what it conquers in haste,
+            but by the living harmony between its ancient foundations and the instruments
+            it builds for tomorrow.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: THE PEOPLE & THE GIANTS (12-COLUMN ASYMMETRIC BENTO GRID)
+         Replaces generic 3-equal-column cards with 7/5 asymmetric pairing
+         ==================================================================== -->
+    <section id="civilization" class="section-block reveal-section">
+      <div class="container-agency">
+        <div style="max-width: 680px; margin-bottom: var(--spacing-600);">
+          <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+            THE PEOPLE &amp; THE GIANTS
+          </p>
+          <h2 class="heading-2" style="margin-bottom: var(--spacing-200);">
+            Different species sharing one sovereign civilization
+          </h2>
+          <p class="body-3" style="color: var(--text-secondary);">
+            In Aegyra and Dinotopia, humans, prehistoric giants, and autonomous software engines
+            share knowledge, ritual, and daily craft across three foundational guilds.
+          </p>
+        </div>
+
+        <div class="bento-grid-12">
+          <!-- Dominant Primary Bento Cell (col-span-7) -->
+          <article class="col-span-7 bezel-outer">
+            <div class="bezel-inner aspect-16-10">
+              <canvas
+                data-matte-scene="companions"
+                width="800"
+                height="500"
+                style="width: 100%; height: 100%; display: block;"
+                aria-label="Classical oil painting of robed scholars and long necked sauropod companions on a sunlit stone colonnade"
+              ></canvas>
+            </div>
+            <div style="padding: var(--spacing-300); display: flex; flex-direction: column; gap: var(--spacing-100);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="caption-3 mono" style="color: var(--text-info);">01 // COMPANIONS</span>
+                <span class="caption-4 mono" style="color: var(--text-tertiary);">SYMBIOTIC PROTOCOL</span>
+              </div>
+              <h3 class="heading-4">Partners in progress across stone and silicon</h3>
+              <p class="body-3" style="color: var(--text-secondary);">
+                Trust is forged through attentive care and shared architecture. Just as the riders
+                of the valley walk beside gentle giants, our interfaces pair expressive WebGL
+                depth with dependable TypeScript foundations.
+              </p>
+            </div>
+          </article>
+
+          <!-- Stacked Secondary Bento Column (col-span-5) -->
+          <div class="col-span-5" style="display: flex; flex-direction: column; gap: var(--spacing-300);">
+            <article class="bezel-outer" style="padding: var(--spacing-300);">
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="caption-3 mono" style="color: var(--text-info);">02 // BUILDERS</span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--core-primary-400)" stroke-width="1.75">
+                    <path d="M12 3V21M5 8H19M7 21H17" />
+                  </svg>
+                </div>
+                <h3 class="heading-5">Monumental works shaped by many strengths</h3>
+                <p class="body-5" style="color: var(--text-secondary);">
+                  Multi tiered aqueducts, PostgreSQL ledgers, and responsive 2.5D shaders engineered
+                  inside a cloud terminal environment from West Bengal.
+                </p>
+              </div>
+              <div style="padding-top: var(--spacing-200); border-top: 1px solid var(--border-primary); margin-top: var(--spacing-200);">
+                <span class="caption-4 mono" style="color: var(--text-tertiary);">
+                  16 GB CLOUD SHELL · NEXT.JS · THREE.JS
+                </span>
+              </div>
+            </article>
+
+            <article class="bezel-outer" style="padding: var(--spacing-300);">
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="caption-3 mono" style="color: var(--text-info);">03 // SCHOLARS</span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--core-primary-400)" stroke-width="1.75">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3V21M3 12H21" />
+                  </svg>
+                </div>
+                <h3 class="heading-5">A living study of land, physics, and memory</h3>
+                <p class="body-5" style="color: var(--text-secondary);">
+                  Rooted in pure science discipline across physics, mathematics, and computer
+                  science, every shader curve and layout token follows strict mathematical ratios.
+                </p>
+              </div>
+              <div style="padding-top: var(--spacing-200); border-top: 1px solid var(--border-primary); margin-top: var(--spacing-200);">
+                <span class="caption-4 mono" style="color: var(--text-tertiary);">
+                  CONCENTRIC RADII · GLSL SHADERS · LSB STEGO
+                </span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Full-Width Parchment Field Chronicle Card (Image 4 Reference) -->
+          <div class="col-span-12 chronicle-parchment-card">
+            <p class="heading-4" style="color: var(--core-grayscale-900); max-width: 820px;">
+              &ldquo;A civilization is not measured by what it conquers, but by what it learns to
+              live beside.&rdquo;
+            </p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-200); border-top: 1px solid var(--core-accent-700); padding-top: var(--spacing-200);">
+              <span class="caption-3 mono" style="color: var(--core-grayscale-850);">
+                AEGYRAN FIELD CHRONICLE / VOL. I
+              </span>
+              <span class="caption-4 mono" style="color: var(--core-grayscale-800);">
+                CURATED BY ARNAB DEBNATH // CONTAI SANCTUARY
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: INTERACTIVE BIOME EXPLORER (IMAGE 10 REFERENCE)
+         Valleys, Cities, Forests, Cliffs -> Shifts WebGL Stage & Matte Plate
+         ==================================================================== -->
+    <section id="biomes" class="section-block reveal-section">
+      <div class="container-agency">
+        <div style="max-width: 680px; margin-bottom: var(--spacing-500);">
+          <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+            THE LIVING LANDSCAPE
+          </p>
+          <h2 class="heading-2" style="margin-bottom: var(--spacing-200);">
+            Explore the four realms of the valley
+          </h2>
+          <p class="body-3" style="color: var(--text-secondary);">
+            Select a province below to shift the atmospheric lighting of the 2.5D WebGL stage and
+            inspect the oil matte plates of each territory.
+          </p>
+        </div>
+
+        <!-- 4 Biome Selector Buttons -->
+        <div class="biome-tabs" role="tablist" aria-label="Sanctum provinces">
+          <button
+            type="button"
+            class="biome-tab-btn"
+            role="tab"
+            aria-selected="true"
+            data-biome-tab="valleys"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M2 19L8 9L13 16L17 11L22 19H2Z" />
+            </svg>
+            <span class="title-4">Valleys</span>
+          </button>
+
+          <button
+            type="button"
+            class="biome-tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-biome-tab="cities"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M3 10L12 4L21 10H3Z" />
+              <path d="M6 10V19M10 10V19M14 10V19M18 10V19M3 19H21" />
+            </svg>
+            <span class="title-4">Cities</span>
+          </button>
+
+          <button
+            type="button"
+            class="biome-tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-biome-tab="forests"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M12 3L6 12H10L5 19H19L14 12H18L12 3Z" />
+            </svg>
+            <span class="title-4">Forests</span>
+          </button>
+
+          <button
+            type="button"
+            class="biome-tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-biome-tab="cliffs"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M4 20L7 6L14 11L19 4L21 20H4Z" />
+            </svg>
+            <span class="title-4">Cliffs</span>
+          </button>
+        </div>
+
+        <!-- Active Biome Showcase Card (Image 10 Waterfall Citadel Card) -->
+        <div class="bezel-outer">
+          <div class="bento-grid-12" style="align-items: center; padding: var(--spacing-200);">
+            <div class="col-span-6">
+              <div class="bezel-inner aspect-16-10">
+                <canvas
+                  id="biome-showcase-canvas"
+                  width="720"
+                  height="450"
+                  style="width: 100%; height: 100%; display: block;"
+                  aria-label="Interactive province oil painting plate"
+                ></canvas>
+              </div>
+            </div>
+            <div class="col-span-6" style="padding: var(--spacing-300); display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <span id="biome-eyebrow" class="caption-3 mono" style="color: var(--text-info);">
+                REALM 01 / THE SUNKEN CALDERA
+              </span>
+              <h3 id="biome-title" class="heading-3">The Waterfall Citadel</h3>
+              <p id="biome-body" class="body-3" style="color: var(--text-secondary);">
+                The heart of Aegyra and Dinotopia, a classical sanctuary carved into emerald cliffs
+                where scholarly engineering and primordial nature flow together.
+              </p>
+              <p id="biome-coords" class="caption-4 mono" style="color: var(--text-tertiary);">
+                LAT 21.78° N · LON 87.75° E · ELEVATION 1,420 CUBITS
+              </p>
+              <div style="padding-top: var(--spacing-100);">
+                <a
+                  id="biome-action-link"
+                  href="https://dorabot-independent.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary button-md"
+                >
+                  Traverse arnabdebnath7/DoraBot
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: REAL GITHUB RELICS OF ARNAB DEBNATH (ASYMMETRIC BENTO)
+         Uses the user's real GitHub repositories & live Vercel deployments
+         ==================================================================== -->
+    <section id="relics" class="section-block reveal-section">
+      <div class="container-agency">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--spacing-300); margin-bottom: var(--spacing-500);">
+          <div style="max-width: 680px;">
+            <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+              VERIFIED GITHUB ARCHIVES // @ARNABDEBNATH7
+            </p>
+            <h2 class="heading-2" style="margin-bottom: var(--spacing-200);">
+              Engineered relics of the sanctum
+            </h2>
+            <p class="body-3" style="color: var(--text-secondary);">
+              Every builder begins with foundational experiments and evolves them into enduring
+              monuments. Below are the real GitHub repositories and live Vercel deployments crafted
+              by Arnab Debnath.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-75);" role="group" aria-label="Filter relics by guild">
+            <button type="button" class="btn btn-primary button-sm" data-guild-filter="ALL">
+              All relics (6)
+            </button>
+            <button type="button" class="btn btn-secondary button-sm" data-guild-filter="COMPANIONS">
+              Companions
+            </button>
+            <button type="button" class="btn btn-secondary button-sm" data-guild-filter="SCHOLARS">
+              Scholars
+            </button>
+            <button type="button" class="btn btn-secondary button-sm" data-guild-filter="BUILDERS">
+              Builders
+            </button>
+          </div>
+        </div>
+
+        <!-- Populated dynamically by app.js with 12-column asymmetric cards & oil canvases -->
+        <div id="relics-bento-container" class="bento-grid-12"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: HOW IT WORKS (3 ARCHITECTURAL STEPS)
+         ==================================================================== -->
+    <section class="section-block reveal-section">
+      <div class="container-agency">
+        <div style="max-width: 680px; margin-bottom: var(--spacing-500);">
+          <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+            THE CRAFTING PROTOCOL
+          </p>
+          <h2 class="heading-2">How the 2.5D sanctum is engineered</h2>
+        </div>
+
+        <div class="bento-grid-12">
+          <div class="col-span-4 bezel-outer" style="padding: var(--spacing-300);">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <span class="caption-3 mono" style="color: var(--text-info);">STEP 01 // DEPTH SYNTHESIS</span>
+              <h3 class="heading-5">Classical oil matte &amp; Z depth pairing</h3>
+              <p class="body-5" style="color: var(--text-secondary);">
+                Each architectural scene is rendered onto an offscreen linen weave canvas alongside
+                a synchronized grayscale depth map that separates sky, viaduct, and Corinthian
+                columns.
+              </p>
+            </div>
+            <p class="caption-4 mono" style="color: var(--text-tertiary); margin-top: var(--spacing-300);">
+              HTML5 CANVAS · LSB STEGO SEAL
+            </p>
+          </div>
+
+          <div class="col-span-4 bezel-outer" style="padding: var(--spacing-300);">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <span class="caption-3 mono" style="color: var(--text-info);">STEP 02 // GLSL SHADERS</span>
+              <h3 class="heading-5">Three.js vertex &amp; waterfall displacement</h3>
+              <p class="body-5" style="color: var(--text-secondary);">
+                Custom GLSL vertex and fragment shaders displace the terrain in 2.5D space,
+                animate cascading waterfalls, and ripple outward when the celestial bolide strikes.
+              </p>
+            </div>
+            <p class="caption-4 mono" style="color: var(--text-tertiary); margin-top: var(--spacing-300);">
+              THREE.JS WEBGL · 60 FPS MOBILE
+            </p>
+          </div>
+
+          <div class="col-span-4 bezel-outer" style="padding: var(--spacing-300);">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <span class="caption-3 mono" style="color: var(--text-info);">STEP 03 // GSAP CHOREOGRAPHY</span>
+              <h3 class="heading-5">Weighted spring scroll &amp; token precision</h3>
+              <p class="body-5" style="color: var(--text-secondary);">
+                GSAP ScrollTrigger scrubs the camera through the marble archway while every spacing
+                gap, concentric radius, and typography scale locks to strict agency tokens.
+              </p>
+            </div>
+            <p class="caption-4 mono" style="color: var(--text-tertiary); margin-top: var(--spacing-300);">
+              GSAP SCROLLTRIGGER · CUBIC BEZIER
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: OBJECTION HANDLING & ARCHIVAL FAQ (6 QUESTIONS)
+         ==================================================================== -->
+    <section id="faq" class="section-block reveal-section">
+      <div class="container-agency">
+        <div class="bento-grid-12">
+          <div class="col-span-5">
+            <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+              ARCHIVAL INQUIRIES
+            </p>
+            <h2 class="heading-3" style="margin-bottom: var(--spacing-200);">
+              Questions from visiting patrons &amp; engineers
+            </h2>
+            <p class="body-3" style="color: var(--text-secondary); margin-bottom: var(--spacing-300);">
+              Every technical detail of this portfolio is open for inspection, from the invisible
+              steganographic watermark to the mobile Chrome WebGL pipeline.
+            </p>
+            <button type="button" class="btn btn-secondary button-md" onclick="document.getElementById('verify-stego-btn').click()">
+              Open steganography inspector
+            </button>
+          </div>
+
+          <div class="col-span-7 faq-list">
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="true" aria-controls="faq-p1">
+                <span>How does the invisible watermark protect the artwork without cluttering the screen?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p1" class="faq-panel body-5">
+                Every classical oil canvas encodes the string
+                <code class="mono">AEGYRA::SANCTUM::ARNAB_DEBNATH</code> into the Least Significant
+                Bits of the RGB pixel array. Because a 1 bit change alters luminance by less than
+                0.39 percent, normal visitors see zero watermark on screen, while our built in
+                inspector reads the raw pixel bits to prove authorship.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="false" aria-controls="faq-p2">
+                <span>Why does this portfolio run without a mandatory Node.js backend?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p2" class="faq-panel body-5" hidden>
+                Running 100 percent client side with ES modules, Three.js, and GSAP guarantees zero
+                cold start latency on mobile Chrome and instant hosting on GitHub Pages, Githack
+                CDN, and Vercel. An optional Node.js server (<code class="mono">server.js</code>) is
+                also included in the repository for local or container environments.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="false" aria-controls="faq-p3">
+                <span>How is the 2.5D parallax effect achieved without heavy 3D model downloads?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p3" class="faq-panel body-5" hidden>
+                Instead of forcing mobile browsers to download megabytes of GLTF geometry, our engine
+                pairs high resolution 2D oil matte plates with grayscale Z depth maps inside a custom
+                GLSL shader, displacing vertices in real time at 60 frames per second.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="false" aria-controls="faq-p4">
+                <span>Are the featured repositories real projects built by Arnab Debnath?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p4" class="faq-panel body-5" hidden>
+                Yes. All six featured relics link directly to Arnab Debnath&apos;s verified GitHub
+                repositories (<code class="mono">@arnabdebnath7</code>) and live Vercel apps,
+                including DoraBot, Trading Journal, Quill, Website Hunter AI, and Mrittika Pavilion.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="false" aria-controls="faq-p5">
+                <span>How does the design system enforce the $10,000 agency standard?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p5" class="faq-panel body-5" hidden>
+                Every surface, border, text layer, spacing gap, and concentric corner radius is
+                bound to a two layer CSS variable system supporting Dark and Light modes, using
+                only the Geist typeface family and weighted cubic bezier deceleration curves.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger title-3" aria-expanded="false" aria-controls="faq-p6">
+                <span>Can I replay the Celestial Bolide meteor impact or test mobile tilt?</span>
+                <span class="mono">+</span>
+              </button>
+              <div id="faq-p6" class="faq-panel body-5" hidden>
+                Yes. Refreshing the sanctum replays the celestial bolide descent in Three.js, and
+                tilting your Android phone or moving your cursor shifts the 2.5D archway and valley
+                layers in real time.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: FINAL CTA & RISK REVERSAL COMMISSION DISPATCH
+         ==================================================================== -->
+    <section id="commission" class="section-block reveal-section">
+      <div class="container-agency">
+        <div class="bento-grid-12">
+          <div class="col-span-6 bezel-outer" style="padding: var(--spacing-400);">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <span class="caption-3 mono" style="color: var(--text-info);">
+                SOVEREIGN COMMISSION // RISK REVERSAL GUARANTEE
+              </span>
+              <h2 class="heading-3">Summon the builder for your next digital citadel</h2>
+              <p class="body-3" style="color: var(--text-secondary);">
+                Whether you require an interactive WebGL landing page, a full stack Next.js and
+                PostgreSQL application, or custom AI automation workflows, every build includes
+                open GitHub source access and mobile Chrome verification before final handover.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-100); padding-top: var(--spacing-200); border-top: 1px solid var(--border-primary);">
+                <p class="body-4">100 percent transparent GitHub commits from day one</p>
+                <p class="body-4">Verified at 1440px desktop, 768px tablet, and 390px mobile</p>
+                <p class="body-4">Direct collaboration with Arnab Debnath (West Bengal, India)</p>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-100); margin-top: var(--spacing-300);">
+              <a
+                href="https://github.com/arnabdebnath7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary button-md"
+              >
+                Commence the sojourn on GitHub
+              </a>
+              <a href="mailto:debnatharnab64@gmail.com" class="btn btn-secondary button-md">
+                Dispatch direct courier
+              </a>
+            </div>
+          </div>
+
+          <div class="col-span-6 bezel-outer" style="padding: var(--spacing-400);">
+            <form id="sanctum-commission-form" novalidate style="display: flex; flex-direction: column; gap: var(--spacing-200);">
+              <h3 class="heading-5">Inscribe a project missive</h3>
+
+              <div class="form-field">
+                <label for="patron-name" class="title-4">Your full name</label>
+                <input
+                  type="text"
+                  id="patron-name"
+                  class="input-control body-5"
+                  placeholder="Lord Arthur Pendelton"
+                  required
+                />
+                <span id="err-patron-name" class="field-error-msg caption-2" hidden></span>
+              </div>
+
+              <div class="form-field">
+                <label for="patron-email" class="title-4">Electronic mail address</label>
+                <input
+                  type="email"
+                  id="patron-email"
+                  class="input-control body-5"
+                  placeholder="patron@citadel.org"
+                  required
+                />
+                <span id="err-patron-email" class="field-error-msg caption-2" hidden></span>
+              </div>
+
+              <div class="form-field">
+                <label for="patron-brief" class="title-4">Architectural brief &amp; timeline</label>
+                <textarea
+                  id="patron-brief"
+                  rows="4"
+                  class="input-control body-5"
+                  placeholder="Describe the 2.5D WebGL experience or full stack application you wish to commission..."
+                  required
+                ></textarea>
+                <span id="err-patron-brief" class="field-error-msg caption-2" hidden></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary button-md">
+                Commence the sojourn
+              </button>
+
+              <p id="form-status-message" class="body-4" hidden></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       COMPLETE SEMANTIC FOOTER (PRIVACY, TERMS, 404 PREVIEW, STEGO SEAL)
+       ====================================================================== -->
+  <footer
+    style="position: relative; z-index: 10; border-top: 1px solid var(--border-primary); background-color: var(--surface-primary); padding: var(--spacing-600) 0;"
+  >
+    <div class="container-agency" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-300);">
+      <div style="display: flex; flex-direction: column; gap: var(--spacing-50);">
+        <p class="title-3">Aegyra // People, Giants &amp; Engineered Relics</p>
+        <p class="caption-2" style="color: var(--text-tertiary);">
+          Crafted by Arnab Debnath (@arnabdebnath7) · West Bengal, India · All artwork LSB Stego Sealed
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-200); align-items: center;">
+        <a href="#hero" class="nav-link caption-1">Return to summit</a>
+        <a href="https://github.com/arnabdebnath7/Aegyra-Portfolio" target="_blank" rel="noopener noreferrer" class="nav-link caption-1">Source repository</a>
+        <a href="#privacy" onclick="document.getElementById('verify-stego-btn').click(); return false;" class="nav-link caption-1">Privacy &amp; Stego Charter</a>
+        <a href="#terms" onclick="document.getElementById('open-foundations-btn').click(); return false;" class="nav-link caption-1">Design Tokens</a>
+        <a href="#404" id="preview-404-btn" class="nav-link caption-1">404 Sanctum</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL 1: INVISIBLE LSB STEGANOGRAPHIC WATERMARK INSPECTOR
+       ====================================================================== -->
+  <div id="stego-modal" class="modal-backdrop" data-open="false" role="dialog" aria-modal="true" aria-labelledby="stego-modal-title">
+    <div class="modal-window">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 id="stego-modal-title" class="heading-5">Invisible LSB Steganographic Seal Inspector</h2>
+        <button type="button" id="close-stego-modal" class="btn btn-secondary button-sm">Close</button>
+      </div>
+      <p class="body-5" style="color: var(--text-secondary);">
+        Normal visitors see zero watermark on the artwork plates. Under the hood, the Least
+        Significant Bits of the RGB channels in every canvas hold a cryptographic origin seal for
+        Arnab Debnath. Below is the live decoded readout extracted directly from the Hero Canvas
+        pixel buffer:
+      </p>
+      <div id="stego-audit-output"></div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 2: /FIGMA-DESIGNER FOUNDATIONS & 25-VARIANT BUTTON MATRIX
+       ====================================================================== -->
+  <div id="foundations-modal" class="modal-backdrop" data-open="false" role="dialog" aria-modal="true" aria-labelledby="foundations-modal-title">
+    <div class="modal-window">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 id="foundations-modal-title" class="heading-5">Foundations &amp; 25 Variant Component Matrix</h2>
+        <button type="button" id="close-foundations-modal" class="btn btn-secondary button-sm">Close</button>
+      </div>
+
+      <div>
+        <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+          DARK MODE FLAT SURFACE PALETTE (#000000, #181818, #1F1F1F, #272727, #313131, #131209)
+        </p>
+        <div class="swatch-grid">
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #131209;"></div>
+            <span class="caption-3 mono">Surface/Canvas</span>
+            <span class="caption-5 mono">#131209</span>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #181818;"></div>
+            <span class="caption-3 mono">Surface/Primary</span>
+            <span class="caption-5 mono">#181818</span>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #1F1F1F;"></div>
+            <span class="caption-3 mono">Surface/Subtle</span>
+            <span class="caption-5 mono">#1F1F1F</span>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #272727;"></div>
+            <span class="caption-3 mono">Surface/Secondary</span>
+            <span class="caption-5 mono">#272727</span>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #313131;"></div>
+            <span class="caption-3 mono">Border/Primary</span>
+            <span class="caption-5 mono">#313131</span>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color-box" style="background: #D4A65A;"></div>
+            <span class="caption-3 mono">Action/Primary</span>
+            <span class="caption-5 mono">#D4A65A</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="caption-3 mono" style="color: var(--text-info); margin-bottom: var(--spacing-100);">
+          25 INTERACTIVE BUTTON VARIANTS (5 TYPES x 5 STATES)
+        </p>
+        <div
+          id="button-25-matrix"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: var(--spacing-75);"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 3: BRANDED 404 SANCTUM VIEW (SHIP REQUIREMENT B10)
+       ====================================================================== -->
+  <div id="custom-404-modal" class="modal-backdrop" data-open="false" role="dialog" aria-modal="true" aria-labelledby="modal-404-title">
+    <div class="modal-window" style="max-width: 520px; text-align: center; align-items: center;">
+      <span class="caption-3 mono" style="color: var(--text-warning);">ERROR 404 // UNCHARTED TERRITORY</span>
+      <h2 id="modal-404-title" class="heading-4">Beyond the columns of Aegyra</h2>
+      <p class="body-5" style="color: var(--text-secondary);">
+        The scroll or viaduct path you requested lies beyond the charted boundaries of the valley.
+        Return to the central citadel to continue your exploration.
+      </p>
+      <button type="button" id="close-404-modal" class="btn btn-primary button-md">
+        Return to the citadel
+      </button>
+    </div>
+  </div>
+
+  <!-- THREE.JS & GSAP + SCROLLTRIGGER CDN SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+
+  <!-- APPLICATION ENTRY MODULE -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
