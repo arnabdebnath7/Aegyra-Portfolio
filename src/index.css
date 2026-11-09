@@ -4,22 +4,106 @@
 
 :root {
   color-scheme: dark;
-  --color-void: #070a0d;
-  --color-surface-glass: rgba(18, 24, 28, 0.65);
-  --color-surface-raised: #13191e;
-  --color-gold-bright: #f1b873;
-  --color-gold-primary: #d4a359;
-  --color-gold-muted: #b7976e;
-  --color-gold-champagne: #e2ba7d;
+
+  /* Stone Marble & Earthy Neutrals */
+  --color-stone-canvas: #080D0B;
+  --color-stone-canvas-rgb: 8 13 11;
+  --color-stone-surface: #121C19;
+  --color-stone-surface-rgb: 18 28 25;
+  --color-stone-surface-alt: #1A2623;
+  --color-stone-surface-alt-rgb: 26 38 35;
+  --color-stone-border: #2A3834;
+  --color-stone-border-rgb: 42 56 52;
+  --color-stone-muted: #87979B;
+  --color-stone-muted-rgb: 135 151 155;
+  --color-stone-body: #C5BDB2;
+  --color-stone-body-rgb: 197 189 178;
+  --color-stone-marble: #F3F3EE;
+  --color-stone-marble-rgb: 243 243 238;
+
+  /* Emerald Foliage */
+  --color-emerald-deep: #061A14;
+  --color-emerald-deep-rgb: 6 26 20;
+  --color-emerald-forest: #0C261F;
+  --color-emerald-forest-rgb: 12 38 31;
+  --color-emerald-base: #1B4332;
+  --color-emerald-base-rgb: 27 67 50;
+  --color-emerald-vibrant: #2D6A4F;
+  --color-emerald-vibrant-rgb: 45 106 79;
+  --color-emerald-moss: #556D3F;
+  --color-emerald-moss-rgb: 85 109 63;
+  --color-emerald-glow: #80A36E;
+  --color-emerald-glow-rgb: 128 163 110;
+
+  /* Azure & Waterfall Cyan */
+  --color-cyan-abyss: #09202B;
+  --color-cyan-abyss-rgb: 9 32 43;
+  --color-cyan-deep: #114656;
+  --color-cyan-deep-rgb: 17 70 86;
+  --color-cyan-base: #1F7E9B;
+  --color-cyan-base-rgb: 31 126 155;
+  --color-cyan-waterfall: #2C8BA9;
+  --color-cyan-waterfall-rgb: 44 139 169;
+  --color-cyan-luminous: #41B3C8;
+  --color-cyan-luminous-rgb: 65 179 200;
+  --color-cyan-glow: #41B3C8;
+  --color-cyan-glow-rgb: 65 179 200;
+  --color-cyan-mist: #A8E6F0;
+  --color-cyan-mist-rgb: 168 230 240;
+
+  /* Sunlit Amber */
+  --color-amber-shadow: #4E381E;
+  --color-amber-shadow-rgb: 78 56 30;
+  --color-amber-warm: #A9895D;
+  --color-amber-warm-rgb: 169 137 93;
+  --color-amber-base: #DE9E4B;
+  --color-amber-base-rgb: 222 158 75;
+  --color-amber-sunlit: #E9BB7D;
+  --color-amber-sunlit-rgb: 233 187 125;
+  --color-amber-highlight: #FBE4BE;
+  --color-amber-highlight-rgb: 251 228 190;
+
+  /* Glassmorphic Material System */
+  --surface-glass-default: rgba(18, 28, 25, 0.65);
+  --surface-glass-active: rgba(51, 48, 31, 0.65);
+  --surface-border-default: rgba(169, 137, 93, 0.22);
+  --surface-border-active: rgba(233, 187, 125, 0.65);
+
+  /* Backward Compatibility Aliases */
+  --color-void: #080D0B;
+  --color-void-rgb: 8 13 11;
+  --color-void-dark: #061A14;
+  --color-void-dark-rgb: 6 26 20;
+  --color-void-light: #121C19;
+  --color-void-light-rgb: 18 28 25;
+  --color-gold-bright: #E9BB7D;
+  --color-gold-bright-rgb: 233 187 125;
+  --color-gold-primary: #DE9E4B;
+  --color-gold-primary-rgb: 222 158 75;
+  --color-gold-muted: #A9895D;
+  --color-gold-muted-rgb: 169 137 93;
+  --color-gold-champagne: #FBE4BE;
+  --color-gold-champagne-rgb: 251 228 190;
+  --color-gold-dark: #4E381E;
+  --color-gold-dark-rgb: 78 56 30;
+  --color-surface-glass: rgba(18, 28, 25, 0.65);
+  --color-surface-raised: #121C19;
+  --color-surface-raised-rgb: 18 28 25;
+  --color-surface-border: rgba(169, 137, 93, 0.22);
+  --color-surface-border-rgb: 169 137 93;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background-color: #070a0d;
-  color: #f3f4f6;
-  overflow-x: hidden;
+  background-color: var(--color-stone-canvas);
+  color: var(--color-stone-body);
+  overflow-x: clip;
   min-height: 100vh;
 }
 
@@ -32,33 +116,33 @@ body {
   font-family: 'Space Mono', monospace;
 }
 
-/* Glass panel utility */
+/* Glass panel styled with natural travertine & antique brass trim */
 .glass-panel {
-  background: rgba(18, 24, 28, 0.65);
+  background: var(--surface-glass-default);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(241, 184, 115, 0.2);
+  border: 1px solid var(--surface-border-default);
 }
 
 .glass-pill {
-  background: rgba(18, 24, 28, 0.55);
+  background: rgba(18, 28, 25, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(241, 184, 115, 0.25);
+  border: 1px solid var(--surface-border-default);
 }
 
-/* Ambient glow & backdrop utilities */
+/* Natural ambient halos */
 .ambient-glow {
-  box-shadow: 0 0 100px 30px rgba(212, 163, 89, 0.08), 0 0 40px 10px rgba(241, 184, 115, 0.05);
+  box-shadow: 0 0 100px 30px rgba(31, 126, 155, 0.12), 0 0 50px 15px rgba(233, 187, 125, 0.08);
 }
 
 .ambient-stage-glow {
-  background: radial-gradient(circle at 50% 40%, rgba(241, 184, 115, 0.12) 0%, rgba(18, 24, 28, 0) 70%);
+  background: radial-gradient(circle at 50% 35%, rgba(65, 179, 200, 0.10) 0%, rgba(233, 187, 125, 0.06) 40%, rgba(8, 13, 11, 0) 75%);
 }
 
-/* Noise overlay utility */
+/* Noise overlay utility with subtle amber warmth */
 .film-grain {
-  background-image: radial-gradient(rgba(241, 184, 115, 0.03) 1px, transparent 0);
+  background-image: radial-gradient(rgba(233, 187, 125, 0.03) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -67,14 +151,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070a0d;
+  background: var(--color-stone-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a313d;
+  background: var(--color-stone-border);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a359;
+  background: var(--color-amber-warm);
 }
 
 /* Cursor touch suppression */
